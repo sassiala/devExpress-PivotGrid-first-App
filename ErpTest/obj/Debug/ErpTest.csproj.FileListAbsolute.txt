@@ -1,0 +1,14 @@
+C:\Users\ala\Desktop\VS\ErpTest\ErpTest\bin\ErpTest.dll.config
+C:\Users\ala\Desktop\VS\ErpTest\ErpTest\bin\ErpTest.dll
+C:\Users\ala\Desktop\VS\ErpTest\ErpTest\bin\ErpTest.pdb
+C:\Users\ala\Desktop\VS\ErpTest\ErpTest\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\ala\Desktop\VS\ErpTest\ErpTest\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ala\Desktop\VS\ErpTest\ErpTest\obj\Debug\ErpTest.csprojResolveAssemblyReference.cache
+C:\Users\ala\Desktop\VS\ErpTest\ErpTest\obj\Debug\ErpTest.csproj.CoreCompileInputs.cache
+C:\Users\ala\Desktop\VS\ErpTest\ErpTest\obj\Debug\ErpTest.dll
+C:\Users\ala\Desktop\VS\ErpTest\ErpTest\obj\Debug\ErpTest.pdb
+C:\Users\ala\Desktop\VS\ErpTest\ErpTest\bin\EntityFramework.dll
+C:\Users\ala\Desktop\VS\ErpTest\ErpTest\bin\EntityFramework.SqlServer.dll
+C:\Users\ala\Desktop\VS\ErpTest\ErpTest\bin\EntityFramework.xml
+C:\Users\ala\Desktop\VS\ErpTest\ErpTest\bin\EntityFramework.SqlServer.xml
+C:\Users\ala\Desktop\VS\ErpTest\ErpTest\bin\fr\EntityFramework.resources.dll
