@@ -8,6 +8,13 @@
     ViewBag.Title = "Index";
 }
 
+@{
+    List<ErpTest.Model.BonLivraison> Model = new List<ErpTest.Model.BonLivraison>();
+}
+@{ 
+    int x = 0;
+}
+
 <script>
 
     function getFromWS() {
@@ -27,9 +34,14 @@
             })
 
         function OnSuccess(Response) {
-            var myObj = JSON.parse(Response.d);
+            var list = JSON.parse(Response.d);
+            alert(list[0].DocId);
+            @x = 2;
+           /*
             alert(myObj[1].LieuDepart);
-          
+
+            var model=
+          */
         }
     }
 
@@ -39,6 +51,7 @@
 <h2>Index</h2>
 
 <p>
+    @x;
     @Html.ActionLink("Create New", "Create")
 </p>
 
@@ -46,98 +59,101 @@
 
 
 
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.DocId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NumeroBL)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DateEdition)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DateDepart)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DateArrive)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LieuDepart)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LieuArrive)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LieuActuel)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Transporteur)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Acheminement)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Etat)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Flux)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.JournalId)
-            </th>
-            <th></th>
-        </tr>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.DocId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NumeroBL)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateEdition)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateDepart)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateArrive)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LieuDepart)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LieuArrive)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LieuActuel)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Transporteur)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Acheminement)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Etat)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Flux)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.JournalId)
+                </th>
+                <th></th>
+            </tr>
 
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.DocId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NumeroBL)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateEdition)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateDepart)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateArrive)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LieuDepart)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LieuArrive)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LieuActuel)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Transporteur)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Acheminement)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Etat)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Flux)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.JournalId)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-            </td>
-        </tr>
-    }
+    <table class="table">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DocId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumeroBL)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateEdition)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateDepart)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateArrive)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LieuDepart)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LieuArrive)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LieuActuel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Transporteur)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Acheminement)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Etat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Flux)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JournalId)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
 
     </table>
+
 *@

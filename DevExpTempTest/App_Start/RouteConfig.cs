@@ -23,6 +23,12 @@ namespace DevExpTempTest {
                 defaults: new { controller = "bonLivraison", action = "Index", id = UrlParameter.Optional } // Parameter defaults
             );
 
+            routes.MapRoute(
+                name: "GridPivotIndex", // Route name
+                url: "{controller}/{action}/{id}", // URL with parameters
+                defaults: new { controller = "GridPivot", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+            );
+
         }
     }
 }
