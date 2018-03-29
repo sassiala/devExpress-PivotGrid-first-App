@@ -5,6 +5,11 @@ VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErpTest", "ErpTest\ErpTest.csproj", "{F318B80A-426B-4AA1-9FAC-7E37FEF1A8E7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevExpTempTest", "DevExpTempTest\DevExpTempTest.csproj", "{0CB71DC7-9DED-4B84-98A3-4548A0E5333E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F318B80A-426B-4AA1-9FAC-7E37FEF1A8E7} = {F318B80A-426B-4AA1-9FAC-7E37FEF1A8E7}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +20,10 @@ Global
 		{F318B80A-426B-4AA1-9FAC-7E37FEF1A8E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F318B80A-426B-4AA1-9FAC-7E37FEF1A8E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F318B80A-426B-4AA1-9FAC-7E37FEF1A8E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CB71DC7-9DED-4B84-98A3-4548A0E5333E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CB71DC7-9DED-4B84-98A3-4548A0E5333E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CB71DC7-9DED-4B84-98A3-4548A0E5333E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CB71DC7-9DED-4B84-98A3-4548A0E5333E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
