@@ -17,12 +17,15 @@ namespace DevExpTempTest.Controllers
             return View();
         }
 
-        DevExpTempTest.Models.bonLivraisonERP db = new DevExpTempTest.Models.bonLivraisonERP();
+        //DevExpTempTest.Models.bonLivraisonERP db = new DevExpTempTest.Models.bonLivraisonERP();
 
         [ValidateInput(false)]
         public ActionResult PivotGrid1Partial()
         {
-            bonLivraisonWSReference.bonLivraisonWSSoapClient _client = new bonLivraisonWSReference.bonLivraisonWSSoapClient();
+            //bonLivraisonWSReference.bonLivraisonWSSoapClient _client = new bonLivraisonWSReference.bonLivraisonWSSoapClient();
+            
+            ERPWebServices.WebService1SoapClient _client = new ERPWebServices.WebService1SoapClient();
+            
             string _jsonList = _client.selectAllFromBonLivraison();
 
 
@@ -32,6 +35,7 @@ namespace DevExpTempTest.Controllers
 
             //var model = db.BonLivraisons;
             return PartialView("_PivotGrid1Partial", _list);
+            
         }
     }
 }

@@ -127,7 +127,15 @@
     <Content Include="Connected Services\bonLivraisonWSReference\DevExpTempTest.bonLivraisonWSReference.selectAllFromBonLivraisonResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Connected Services\ERPWebServices\WebService1.wsdl" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <None Include="Connected Services\ERPWebServices\WebService1.disco" />
+    <None Include="Connected Services\ERPWebServices\configuration91.svcinfo" />
+    <None Include="Connected Services\ERPWebServices\configuration.svcinfo" />
+    <None Include="Connected Services\ERPWebServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Connected Services\bonLivraisonWSReference\Reference.svcmap">
@@ -207,6 +215,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\ERPWebServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\bonLivraisonController.cs" />
     <Compile Include="Controllers\GridPivotController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -225,6 +238,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\bonLivraisonWSReference\" />
+    <WCFMetadataStorage Include="Connected Services\ERPWebServices\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ErpTest\ErpTest.csproj">
