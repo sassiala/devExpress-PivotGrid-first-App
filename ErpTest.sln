@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevExpTempTest", "DevExpTem
 		{F318B80A-426B-4AA1-9FAC-7E37FEF1A8E7} = {F318B80A-426B-4AA1-9FAC-7E37FEF1A8E7}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication2", "WebApplication2\WebApplication2.csproj", "{9B55D0A0-163A-452A-B5A5-96FDA1E1FBC5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,10 @@ Global
 		{0CB71DC7-9DED-4B84-98A3-4548A0E5333E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CB71DC7-9DED-4B84-98A3-4548A0E5333E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CB71DC7-9DED-4B84-98A3-4548A0E5333E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B55D0A0-163A-452A-B5A5-96FDA1E1FBC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B55D0A0-163A-452A-B5A5-96FDA1E1FBC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B55D0A0-163A-452A-B5A5-96FDA1E1FBC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B55D0A0-163A-452A-B5A5-96FDA1E1FBC5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

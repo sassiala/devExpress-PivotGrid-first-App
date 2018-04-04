@@ -29,6 +29,12 @@ namespace DevExpTempTest {
                 defaults: new { controller = "GridPivot", action = "Index", id = UrlParameter.Optional } // Parameter defaults
             );
 
+            routes.MapRoute(
+                name: "RDCIndex", // Route name
+                url: "{controller}/{action}/{id}", // URL with parameters
+                defaults: new { controller = "RDC", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+            );
+
         }
     }
 }

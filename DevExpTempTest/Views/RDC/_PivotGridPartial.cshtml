@@ -1,0 +1,257 @@
+@Html.DevExpress().PivotGrid(settings => {
+    settings.Name = "PivotGrid";
+
+    settings.CallbackRouteValues = new { Controller = "RDC", Action = "PivotGridPartial" };
+
+    settings.Width = Unit.Percentage(100);
+    settings.Height = Unit.Pixel(600);
+
+    settings.OptionsView.VerticalScrollingMode = PivotScrollingMode.Virtual;
+    settings.OptionsView.HorizontalScrollingMode = PivotScrollingMode.Virtual;
+    settings.OptionsView.VerticalScrollBarMode = ScrollBarMode.Auto;
+    settings.OptionsView.HorizontalScrollBarMode = ScrollBarMode.Auto;
+    settings.OptionsView.ShowFilterHeaders = true;
+    
+
+    settings.OptionsPager.RowsPerPage = 1000;
+    settings.OptionsPager.ColumnsPerPage = 15;
+    settings.OptionsPager.Visible = false;
+    settings.OptionsFilter.NativeCheckBoxes = true;
+
+
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "Id";
+        field.Caption = "Id";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "IdDocumentComptable";
+        field.Caption = "IdDocumentComptable";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "TypeRubrique";
+        field.Caption = "TypeRubrique";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "CodeClasseComptable";
+        field.Caption = "CodeClasseComptable";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "Reference";
+        field.Caption = "Reference";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "Designation";
+        field.Caption = "Designation";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "Quantite";
+        field.Caption = "Quantite";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "PrixUnitaire";
+        field.Caption = "PrixUnitaire";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "Remise";
+        field.Caption = "Remise";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "Taxe";
+        field.Caption = "Taxe";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "MontantRemise";
+        field.Caption = "MontantRemise";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "MontantTaxe";
+        field.Caption = "MontantTaxe";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "NomTaxe";
+        field.Caption = "NomTaxe";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "CodeJournal";
+        field.Caption = "CodeJournal";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "Good";
+        field.Caption = "Good";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "LabelJournal";
+        field.Caption = "LabelJournal";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "JournalVariationStock";
+        field.Caption = "JournalVariationStock";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "Nature";
+        field.Caption = "Nature";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "Montant";
+        field.Caption = "Montant";
+        field.Visible = false;
+        field.CellFormat.FormatString = "c";
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "OrderClass";
+        field.Caption = "OrderClass";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "Signe";
+        field.Caption = "Signe";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "HelperEstDeductible";
+        field.Caption = "HelperEstDeductible";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "HelperCompteVentillation";
+        field.Caption = "HelperCompteVentillation";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "HelperPourcentageVentillation";
+        field.Caption = "HelperPourcentageVentillation";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "HelperEstExo";
+        field.Caption = "HelperEstExo";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "HelperMontantTaxeAvantExo";
+        field.Caption = "HelperMontantTaxeAvantExo";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "HelperMontantExo";
+        field.Caption = "HelperMontantExo";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "Unite";
+        field.Caption = "Unite";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "Description";
+        field.Caption = "Description";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "Titre";
+        field.Caption = "Titre";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "TitreNomCompte";
+        field.Caption = "TitreNomCompte";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "CodeTier";
+        field.Caption = "CodeTier";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "HTAndNet";
+        field.Caption = "HTAndNet";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "DateCreation";
+        field.Caption = "DateCreation";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "Commentaire";
+        field.Caption = "Commentaire";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "RefGood";
+        field.Caption = "RefGood";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "FactureAss";
+        field.Caption = "FactureAss";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "JournalAss";
+        field.Caption = "JournalAss";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field => {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "SupplierAss";
+        field.Caption = "SupplierAss";
+        field.Visible = false;
+    });
+}).Bind(Model).GetHtml()

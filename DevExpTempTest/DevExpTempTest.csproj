@@ -128,11 +128,33 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\ERPWebServices\WebService1.wsdl" />
+    <None Include="Connected Services\RDCHostedWebService\WebService1.disco" />
+    <None Include="Connected Services\RDCHostedWebService\configuration91.svcinfo" />
+    <None Include="Connected Services\RDCHostedWebService\configuration.svcinfo" />
+    <None Include="Connected Services\RDCHostedWebService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Connected Services\RDCService\DevExpTempTest.RDCService.HelloWorldResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\RDCService\DevExpTempTest.RDCService.RubriqueDocumentComptableResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\RDCHostedWebService\WebService1.wsdl" />
+    <None Include="Connected Services\RDCService\SelectFromRDC.wsdl" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Connected Services\ERPWebServices\WebService1.disco" />
     <None Include="Connected Services\ERPWebServices\configuration91.svcinfo" />
     <None Include="Connected Services\ERPWebServices\configuration.svcinfo" />
     <None Include="Connected Services\ERPWebServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\RDCService\SelectFromRDC.disco" />
+    <None Include="Connected Services\RDCService\configuration91.svcinfo" />
+    <None Include="Connected Services\RDCService\configuration.svcinfo" />
+    <None Include="Connected Services\RDCService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -199,6 +221,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\GridPivot\Index.cshtml" />
     <Content Include="Views\GridPivot\_PivotGrid1Partial.cshtml" />
+    <Content Include="Views\RDC\Index.cshtml" />
+    <Content Include="Views\RDC\_PivotGridPartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -220,14 +244,27 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\RDCHostedWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\RDCService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\bonLivraisonController.cs" />
     <Compile Include="Controllers\GridPivotController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RDCController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\BonLivraison.cs" />
     <Compile Include="Models\bonLivraisonERP.cs" />
+    <Compile Include="Models\RDC.cs" />
+    <Compile Include="Models\RubriqueDocumentComptable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -239,6 +276,8 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\bonLivraisonWSReference\" />
     <WCFMetadataStorage Include="Connected Services\ERPWebServices\" />
+    <WCFMetadataStorage Include="Connected Services\RDCHostedWebService\" />
+    <WCFMetadataStorage Include="Connected Services\RDCService\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ErpTest\ErpTest.csproj">
