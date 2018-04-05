@@ -22,17 +22,42 @@ namespace DevExpTempTest {
                 url: "{controller}/{action}/{id}", // URL with parameters
                 defaults: new { controller = "bonLivraison", action = "Index", id = UrlParameter.Optional } // Parameter defaults
             );
-
-            routes.MapRoute(
-                name: "GridPivotIndex", // Route name
-                url: "{controller}/{action}/{id}", // URL with parameters
-                defaults: new { controller = "GridPivot", action = "Index", id = UrlParameter.Optional } // Parameter defaults
-            );
+            
 
             routes.MapRoute(
                 name: "RDCIndex", // Route name
                 url: "{controller}/{action}/{id}", // URL with parameters
                 defaults: new { controller = "RDC", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+            );
+
+            routes.MapRoute(
+                name: "TypeJournauxAssocieIndex", // Route name
+                url: "{controller}/{action}/{id}", // URL with parameters
+                defaults: new { controller = "TypeJournauxAssocie", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+            );
+
+            routes.MapRoute(
+                name: "CompteRacineIndex", // Route name
+                url: "{controller}/{action}/{id}", // URL with parameters
+                defaults: new { controller = "CompteRacine", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+            );
+
+            routes.MapRoute(
+                name: "CompteFeuilleIndex", // Route name
+                url: "{controller}/{action}/{id}", // URL with parameters
+                defaults: new { controller = "CompteFeuille", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+            );
+
+            routes.MapRoute(
+                name: "ColisArticlesIndex", // Route name
+                url: "{controller}/{action}/{id}", // URL with parameters
+                defaults: new { controller = "ColisArticles", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+            );
+
+            routes.MapRoute(
+                name: "ColiIndex", // Route name
+                url: "{controller}/{action}/{id}", // URL with parameters
+                defaults: new { controller = "Coli", action = "Index", id = UrlParameter.Optional } // Parameter defaults
             );
 
         }

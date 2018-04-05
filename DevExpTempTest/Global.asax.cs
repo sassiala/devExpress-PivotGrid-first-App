@@ -1,3 +1,4 @@
+using DevExpress.Web.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,11 @@ namespace DevExpTempTest {
         protected void Application_Error(object sender, EventArgs e) {
             Exception exception = System.Web.HttpContext.Current.Server.GetLastError();
             //TODO: Handle Exception
+        }
+
+        protected void Application_PreRequestHandlerExecute(object sender, EventArgs e)
+        {
+            DevExpressHelper.Theme = "Aqua";
         }
     }
 }

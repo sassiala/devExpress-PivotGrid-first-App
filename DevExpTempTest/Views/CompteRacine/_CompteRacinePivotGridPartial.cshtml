@@ -1,0 +1,105 @@
+@using DevExpress.Web;
+@using DevExpress.Web.Mvc;
+@using DevExpress.XtraPivotGrid;
+@using DevExpress.XtraPivotGrid.Customization;
+
+
+@Html.DevExpress().PivotGrid(settings =>
+{
+    settings.Name = "CompteRacinePivotGrid";
+    settings.CallbackRouteValues = new { Controller = "CompteRacine", Action = "CompteRacinePivotGridPartial" };
+
+
+    settings.Width = Unit.Percentage(100);
+    settings.Height = Unit.Pixel(600);
+
+    settings.OptionsView.VerticalScrollingMode = PivotScrollingMode.Virtual;
+    settings.OptionsView.HorizontalScrollingMode = PivotScrollingMode.Virtual;
+    settings.OptionsView.VerticalScrollBarMode = ScrollBarMode.Auto;
+    settings.OptionsView.HorizontalScrollBarMode = ScrollBarMode.Auto;
+    settings.OptionsView.ShowFilterHeaders = true;
+    settings.OptionsCustomization.CustomizationWindowHeight = 150;
+    settings.OptionsCustomization.CustomizationWindowWidth = 50;
+    settings.OptionsCustomization.CustomizationFormStyle = CustomizationFormStyle.Excel2007;
+    settings.OptionsView.GroupFieldsInCustomizationWindow = true;
+
+    settings.ClientSideEvents.CellClick = "function(sender, e) { window.alert('Row index: '+ e.RowIndex) }";
+
+    settings.OptionsPager.RowsPerPage = 100000;
+    settings.OptionsPager.ColumnsPerPage = 15;
+    settings.OptionsPager.Visible = false;
+    settings.OptionsFilter.NativeCheckBoxes = true;
+
+
+
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "Code";
+        field.Caption = "Code";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "Libelle";
+        field.Caption = "Libelle";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "NatureCompte";
+        field.Caption = "NatureCompte";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "CodeCompteParent";
+        field.Caption = "CodeCompteParent";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "TypeGestion";
+        field.Caption = "TypeGestion";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "CodePeride_Exercice";
+        field.Caption = "CodePeride_Exercice";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "CodeVentillation";
+        field.Caption = "CodeVentillation";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "IsTerminal";
+        field.Caption = "IsTerminal";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "Descriptif";
+        field.Caption = "Descriptif";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "ShowDescriptif";
+        field.Caption = "ShowDescriptif";
+        field.Visible = false;
+    });
+}).Bind(Model).GetHtml()

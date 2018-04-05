@@ -1,0 +1,81 @@
+@using DevExpress.Web;
+@using DevExpress.Web.Mvc;
+@using DevExpress.XtraPivotGrid;
+@using DevExpress.XtraPivotGrid.Customization;
+
+
+@Html.DevExpress().PivotGrid(settings =>
+{
+    settings.Name = "PivotGrid3";
+    settings.CallbackRouteValues = new { Controller = "ColisArticles", Action = "PivotGrid3Partial" };
+
+
+
+    settings.Width = Unit.Percentage(100);
+    settings.Height = Unit.Pixel(600);
+
+    settings.CustomizationFieldsVisible = true;
+
+    settings.OptionsView.VerticalScrollingMode = PivotScrollingMode.Virtual;
+    settings.OptionsView.HorizontalScrollingMode = PivotScrollingMode.Virtual;
+    settings.OptionsView.VerticalScrollBarMode = ScrollBarMode.Auto;
+    settings.OptionsView.HorizontalScrollBarMode = ScrollBarMode.Auto;
+    settings.OptionsView.ShowFilterHeaders = true;
+    settings.OptionsCustomization.CustomizationWindowHeight = 150;
+    settings.OptionsCustomization.CustomizationWindowWidth = 50;
+    settings.OptionsCustomization.CustomizationFormStyle = CustomizationFormStyle.Excel2007;
+    settings.OptionsView.GroupFieldsInCustomizationWindow = true;
+@*
+    settings.ClientSideEvents.CellClick = "function(sender, e) { window.alert('Row index: '+ e.RowIndex) }";
+*@
+        
+            settings.OptionsPager.RowsPerPage = 100000;
+            settings.OptionsPager.ColumnsPerPage = 15;
+            settings.OptionsPager.Visible = false;
+            settings.OptionsFilter.NativeCheckBoxes = true;
+
+
+
+            settings.Fields.Add(field =>
+            {
+                field.Area = PivotArea.FilterArea;
+                field.FieldName = "Id";
+                field.Caption = "Id";
+                field.Visible = false;
+            });
+            settings.Fields.Add(field =>
+            {
+                field.Area = PivotArea.FilterArea;
+                field.FieldName = "ColisId";
+                field.Caption = "ColisId";
+                field.Visible = false;
+            });
+            settings.Fields.Add(field =>
+            {
+                field.Area = PivotArea.FilterArea;
+                field.FieldName = "Good";
+                field.Caption = "Good";
+                field.Visible = false;
+            });
+            settings.Fields.Add(field =>
+            {
+                field.Area = PivotArea.FilterArea;
+                field.FieldName = "Qty";
+                field.Caption = "Qty";
+                field.Visible = false;
+            });
+            settings.Fields.Add(field =>
+            {
+                field.Area = PivotArea.FilterArea;
+                field.FieldName = "DocId";
+                field.Caption = "DocId";
+                field.Visible = false;
+            });
+            settings.Fields.Add(field =>
+            {
+                field.Area = PivotArea.FilterArea;
+                field.FieldName = "Nature";
+                field.Caption = "Nature";
+                field.Visible = false;
+            });
+        }).Bind(Model).GetHtml()

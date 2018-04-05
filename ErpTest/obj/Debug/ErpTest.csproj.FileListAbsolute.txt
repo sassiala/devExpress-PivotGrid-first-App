@@ -8,7 +8,6 @@ C:\Users\ala\Desktop\VS\ErpTest\ErpTest\bin\EntityFramework.xml
 C:\Users\ala\Desktop\VS\ErpTest\ErpTest\bin\EntityFramework.SqlServer.xml
 C:\Users\ala\Desktop\VS\ErpTest\ErpTest\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\ala\Desktop\VS\ErpTest\ErpTest\bin\fr\EntityFramework.resources.dll
-C:\Users\ala\Desktop\VS\ErpTest\ErpTest\obj\Debug\ErpTest.csprojResolveAssemblyReference.cache
 C:\Users\ala\Desktop\VS\ErpTest\ErpTest\obj\Debug\ErpTest.csproj.CoreCompileInputs.cache
 C:\Users\ala\Desktop\VS\ErpTest\ErpTest\obj\Debug\ErpTest.dll
 C:\Users\ala\Desktop\VS\ErpTest\ErpTest\obj\Debug\ErpTest.pdb

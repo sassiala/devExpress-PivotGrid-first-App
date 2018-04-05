@@ -219,10 +219,18 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\GridPivot\Index.cshtml" />
-    <Content Include="Views\GridPivot\_PivotGrid1Partial.cshtml" />
     <Content Include="Views\RDC\Index.cshtml" />
     <Content Include="Views\RDC\_PivotGridPartial.cshtml" />
+    <Content Include="Views\TypeJournauxAssocie\Index.cshtml" />
+    <Content Include="Views\TypeJournauxAssocie\_TypeJournauxAssociePivotGridPartial.cshtml" />
+    <Content Include="Views\Coli\Index.cshtml" />
+    <Content Include="Views\Coli\_ColiPartial.cshtml" />
+    <Content Include="Views\CompteRacine\Index.cshtml" />
+    <Content Include="Views\CompteRacine\_CompteRacinePivotGridPartial.cshtml" />
+    <Content Include="Views\ColisArticles\Index.cshtml" />
+    <Content Include="Views\ColisArticles\_PivotGrid3Partial.cshtml" />
+    <Content Include="Views\CompteFeuille\Index.cshtml" />
+    <Content Include="Views\CompteFeuille\_PivotGrid4Partial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -255,16 +263,30 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Controllers\bonLivraisonController.cs" />
-    <Compile Include="Controllers\GridPivotController.cs" />
+    <Compile Include="Controllers\ColiController.cs" />
+    <Compile Include="Controllers\ColisArticlesController.cs" />
+    <Compile Include="Controllers\CompteFeuilleController.cs" />
+    <Compile Include="Controllers\CompteRacineController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RDCController.cs" />
+    <Compile Include="Controllers\TypeJournauxAssocieController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\BonLivraison.cs" />
     <Compile Include="Models\bonLivraisonERP.cs" />
+    <Compile Include="Models\Coli.cs" />
+    <Compile Include="Models\ColisArticle.cs" />
+    <Compile Include="Models\ColisArticlesX.cs" />
+    <Compile Include="Models\ColiX.cs" />
+    <Compile Include="Models\CompteFeuille.cs" />
+    <Compile Include="Models\CompteFeuilleX.cs" />
+    <Compile Include="Models\CompteRacine.cs" />
+    <Compile Include="Models\CompteRacineX.cs" />
     <Compile Include="Models\RDC.cs" />
     <Compile Include="Models\RubriqueDocumentComptable.cs" />
+    <Compile Include="Models\TJAContaxt.cs" />
+    <Compile Include="Models\TypeJournauxAssocie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

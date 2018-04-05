@@ -1,0 +1,118 @@
+@using DevExpress.Web;
+@using DevExpress.Web.Mvc;
+@using DevExpress.XtraPivotGrid;
+@using DevExpress.XtraPivotGrid.Customization;
+
+
+@Html.DevExpress().PivotGrid(settings =>
+{
+    settings.Name = "TypeJournauxAssociePivotGrid";
+    settings.Theme = "Aqua";
+    settings.CallbackRouteValues = new { Controller = "TypeJournauxAssocie", Action = "TypeJournauxAssociePivotGridPartial" };
+
+
+    settings.Width = Unit.Percentage(100);
+    settings.Height = Unit.Pixel(600);
+
+    settings.OptionsView.VerticalScrollingMode = PivotScrollingMode.Virtual;
+    settings.OptionsView.HorizontalScrollingMode = PivotScrollingMode.Virtual;
+    settings.OptionsView.VerticalScrollBarMode = ScrollBarMode.Auto;
+    settings.OptionsView.HorizontalScrollBarMode = ScrollBarMode.Auto;
+    settings.OptionsView.ShowFilterHeaders = true;
+    settings.OptionsCustomization.CustomizationWindowHeight = 150;
+    settings.OptionsCustomization.CustomizationWindowWidth = 50;
+    settings.OptionsCustomization.CustomizationFormStyle = CustomizationFormStyle.Excel2007;
+    settings.OptionsView.GroupFieldsInCustomizationWindow = true;
+
+    settings.ClientSideEvents.CellClick = "function(sender, e) { window.alert('Row index: '+ e.RowIndex) }";
+
+    settings.OptionsPager.RowsPerPage = 100000;
+    settings.OptionsPager.ColumnsPerPage = 15;
+    settings.OptionsPager.Visible = false;
+    settings.OptionsFilter.NativeCheckBoxes = true;
+
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "Label";
+        field.Caption = "Label";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "LabelCategorieRegleComptable";
+        field.Caption = "LabelCategorieRegleComptable";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "JournalParent";
+        field.Caption = "JournalParent";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "CodeCompteFlux";
+        field.Caption = "CodeCompteFlux";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "IsTerminal";
+        field.Caption = "IsTerminal";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "ShowDescriptive";
+        field.Caption = "ShowDescriptive";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "FournisseurNotation";
+        field.Caption = "FournisseurNotation";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "GoodNotation";
+        field.Caption = "GoodNotation";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "PartenaireNotation";
+        field.Caption = "PartenaireNotation";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "Id";
+        field.Caption = "Id";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "IsIncremental";
+        field.Caption = "IsIncremental";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "UniqueSupplier";
+        field.Caption = "UniqueSupplier";
+        field.Visible = false;
+    });
+}).Bind(Model).GetHtml()
