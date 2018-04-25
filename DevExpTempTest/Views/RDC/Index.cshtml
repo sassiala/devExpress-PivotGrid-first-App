@@ -1,9 +1,42 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Rubrique Document Comptable";
 }
 
-<h2>Index</h2>
+<h3>
+@Html.ActionLink("Home Page", "Index", "Home")
+</h3>
+
+<h2>Table "Rubrique Document Comptable"</h2>
+
+
+<script type="text/javascript">
+    var visible = true;
+
+    function RDCJsFunction() {
+	
+        PivotGrid.SetCustomizationFieldsVisibility(visible);
+        if (visible) {
+            visible = false;
+        }
+        else {
+            visible = true;
+        }
+
+    }
+</script>
+
+@Html.DevExpress().Button(
+                settings =>
+                {
+                    settings.Name = "showRDCJsFunction";
+
+                    settings.Text = "Show Customization Form";
+                    settings.Width = 120;
+                    settings.ClientSideEvents.Click = "RDCJsFunction";
+                }
+            ).GetHtml()
+
 
 
 @Html.Action("PivotGridPartial")

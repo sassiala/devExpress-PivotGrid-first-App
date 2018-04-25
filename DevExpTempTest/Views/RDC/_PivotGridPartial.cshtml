@@ -3,12 +3,51 @@
 @using DevExpress.XtraPivotGrid;
 @using DevExpress.XtraPivotGrid.Customization;
 
+
+
 @Html.DevExpress().PivotGrid(settings =>
 {
     settings.Name = "PivotGrid";
 
     settings.CallbackRouteValues = new { Controller = "RDC", Action = "PivotGridPartial" };
 
+	
+	
+			
+	settings.PreRender = (sender, e) =>
+{
+    ASPxPivotGrid PivotGrid = sender as ASPxPivotGrid;
+    MemoryStream collapseStateStream = (MemoryStream)(Session["RDCMemorySteam"]);
+    string layout = (string)(Session["RDCLayout"]);
+    if (layout == null ||
+        collapseStateStream == null)
+    {
+        return;
+    }
+    PivotGrid.LoadLayoutFromString(layout, PivotGridWebOptionsLayout.DefaultLayout);
+    collapseStateStream.Seek(0, SeekOrigin.Begin);
+    PivotGrid.LoadCollapsedStateFromStream(collapseStateStream);
+};
+settings.AfterPerformCallback = (sender, e) =>
+{
+    ASPxPivotGrid PivotGrid = sender as ASPxPivotGrid;
+    Session["RDCLayout"] = PivotGrid.SaveLayoutToString(PivotGridWebOptionsLayout.DefaultLayout);
+    MemoryStream collapseStateStream = (MemoryStream)(Session["RDCMemorySteam"]);
+    if (collapseStateStream != null)
+    {
+        collapseStateStream.Dispose();
+    }
+    collapseStateStream = new MemoryStream();
+    PivotGrid.SaveCollapsedStateToStream(collapseStateStream);
+    Session["RDCMemorySteam"] = collapseStateStream;
+};
+
+	
+	
+	
+	
+	settings.OptionsCustomization.CustomizationFormLayout = CustomizationFormLayout.StackedSideBySide;
+	
     settings.Width = Unit.Percentage(100);
     settings.Height = Unit.Pixel(600);
 
@@ -36,6 +75,8 @@
         field.FieldName = "Id";
         field.Caption = "Id";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -43,6 +84,8 @@
         field.FieldName = "IdDocumentComptable";
         field.Caption = "IdDocumentComptable";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -50,6 +93,8 @@
         field.FieldName = "TypeRubrique";
         field.Caption = "TypeRubrique";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -57,6 +102,8 @@
         field.FieldName = "CodeClasseComptable";
         field.Caption = "CodeClasseComptable";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -64,6 +111,8 @@
         field.FieldName = "Reference";
         field.Caption = "Reference";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -71,6 +120,8 @@
         field.FieldName = "Designation";
         field.Caption = "Designation";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -78,6 +129,8 @@
         field.FieldName = "Quantite";
         field.Caption = "Quantite";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -85,6 +138,8 @@
         field.FieldName = "PrixUnitaire";
         field.Caption = "PrixUnitaire";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -92,6 +147,8 @@
         field.FieldName = "Remise";
         field.Caption = "Remise";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -99,6 +156,8 @@
         field.FieldName = "Taxe";
         field.Caption = "Taxe";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -106,6 +165,8 @@
         field.FieldName = "MontantRemise";
         field.Caption = "MontantRemise";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -113,6 +174,8 @@
         field.FieldName = "MontantTaxe";
         field.Caption = "MontantTaxe";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -120,6 +183,8 @@
         field.FieldName = "NomTaxe";
         field.Caption = "NomTaxe";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -127,6 +192,8 @@
         field.FieldName = "CodeJournal";
         field.Caption = "CodeJournal";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -134,6 +201,8 @@
         field.FieldName = "Good";
         field.Caption = "Good";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -141,6 +210,8 @@
         field.FieldName = "LabelJournal";
         field.Caption = "LabelJournal";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -148,6 +219,8 @@
         field.FieldName = "JournalVariationStock";
         field.Caption = "JournalVariationStock";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -155,6 +228,8 @@
         field.FieldName = "Nature";
         field.Caption = "Nature";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -163,6 +238,8 @@
         field.Caption = "Montant";
         field.Visible = false;
         field.CellFormat.FormatString = "c";
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -170,6 +247,8 @@
         field.FieldName = "OrderClass";
         field.Caption = "OrderClass";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -177,6 +256,8 @@
         field.FieldName = "Signe";
         field.Caption = "Signe";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -184,6 +265,8 @@
         field.FieldName = "HelperEstDeductible";
         field.Caption = "HelperEstDeductible";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -191,6 +274,8 @@
         field.FieldName = "HelperCompteVentillation";
         field.Caption = "HelperCompteVentillation";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -198,6 +283,8 @@
         field.FieldName = "HelperPourcentageVentillation";
         field.Caption = "HelperPourcentageVentillation";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -205,6 +292,8 @@
         field.FieldName = "HelperEstExo";
         field.Caption = "HelperEstExo";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -212,6 +301,8 @@
         field.FieldName = "HelperMontantTaxeAvantExo";
         field.Caption = "HelperMontantTaxeAvantExo";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -219,6 +310,8 @@
         field.FieldName = "HelperMontantExo";
         field.Caption = "HelperMontantExo";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -226,6 +319,8 @@
         field.FieldName = "Unite";
         field.Caption = "Unite";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -233,6 +328,8 @@
         field.FieldName = "Description";
         field.Caption = "Description";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -240,6 +337,8 @@
         field.FieldName = "Titre";
         field.Caption = "Titre";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -247,6 +346,8 @@
         field.FieldName = "TitreNomCompte";
         field.Caption = "TitreNomCompte";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -254,6 +355,8 @@
         field.FieldName = "CodeTier";
         field.Caption = "CodeTier";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -261,6 +364,8 @@
         field.FieldName = "HTAndNet";
         field.Caption = "HTAndNet";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -268,6 +373,8 @@
         field.FieldName = "DateCreation";
         field.Caption = "DateCreation";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -275,6 +382,8 @@
         field.FieldName = "Commentaire";
         field.Caption = "Commentaire";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -282,6 +391,8 @@
         field.FieldName = "RefGood";
         field.Caption = "RefGood";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -289,6 +400,8 @@
         field.FieldName = "FactureAss";
         field.Caption = "FactureAss";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -296,6 +409,8 @@
         field.FieldName = "JournalAss";
         field.Caption = "JournalAss";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
     settings.Fields.Add(field =>
     {
@@ -303,5 +418,21 @@
         field.FieldName = "SupplierAss";
         field.Caption = "SupplierAss";
         field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
     });
+
+
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "CompteComptable";
+        field.Caption = "CompteComptable";
+        field.Visible = false;
+		field.CollapseAll();
+        field.ValueStyle.VerticalAlign = VerticalAlign.Top;
+    });
+
+    
+
 }).Bind(Model).GetHtml()

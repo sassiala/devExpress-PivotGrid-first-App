@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Organisation des journaux de l'entreprise";
+}
+
+<h3>
+    @Html.ActionLink("Home Page", "Index", "Home")
+</h3>
+<h2>Table "ArboJournal" </h2>
+
+<script type="text/javascript">
+    var visible = true;
+
+    function ArboJournalJsFunction() {
+
+        ArboJournalPivotGrid.SetCustomizationFieldsVisibility(visible);
+        if (visible) {
+            visible = false;
+        }
+        else {
+            visible = true;
+        }
+
+    }
+</script>
+
+@Html.DevExpress().Button(
+                settings =>
+                {
+                    settings.Name = "showArboJournal";
+
+                    settings.Text = "Show Customization Form";
+                    settings.Width = 120;
+                    settings.ClientSideEvents.Click = "ArboJournalJsFunction";
+                }
+            ).GetHtml()
+
+
+@Html.Action("ArboJournalPivotGridPartial")

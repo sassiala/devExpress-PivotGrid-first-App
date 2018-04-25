@@ -103,5 +103,7 @@ namespace DevExpTempTest.Models
         public string JournalAss { get; set; }
 
         public string SupplierAss { get; set; }
+
+        public string CompteComptable { get; set; }
     }
 }

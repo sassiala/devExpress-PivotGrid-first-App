@@ -1,9 +1,40 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "CompteRacineTable";
 }
+<h3>
+@Html.ActionLink("Home Page", "Index", "Home")
+</h3>
+<h2>Table "Compte Racine"</h2>
 
-<h2>Index</h2>
+
+
+<script type="text/javascript">
+    var visible = true;
+
+    function CompteRacineJsFunction() {
+	
+        CompteRacinePivotGrid.SetCustomizationFieldsVisibility(visible);
+        if (visible) {
+            visible = false;
+        }
+        else {
+            visible = true;
+        }
+
+    }
+</script>
+
+@Html.DevExpress().Button(
+                settings =>
+                {
+                    settings.Name = "ShowCompteRacineJsFunction";
+
+                    settings.Text = "Show Customization Form";
+                    settings.Width = 120;
+                    settings.ClientSideEvents.Click = "CompteRacineJsFunction";
+                }
+            ).GetHtml()
 
 
 @Html.Action("CompteRacinePivotGridPartial")

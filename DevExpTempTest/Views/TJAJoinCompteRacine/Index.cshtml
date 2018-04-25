@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>
+    @Html.ActionLink("Home Page", "Index", "Home")
+</h3>
+
+<h2>Table "Join Journaux&Compte Racine"</h2>
+
+
+<script type="text/javascript">
+    var visible = true;
+
+    function JoinJsFunction() {
+
+        JoinPivotGridPartialPivotGrid.SetCustomizationFieldsVisibility(visible);
+        if (visible) {
+            visible = false;
+        }
+        else {
+            visible = true;
+        }
+
+    }
+</script>
+
+@Html.DevExpress().Button(
+                settings =>
+                {
+                    settings.Name = "showJoinJsFunction";
+
+                    settings.Text = "Show Customization Form";
+                    settings.Width = 120;
+                    settings.ClientSideEvents.Click = "JoinJsFunction";
+                }
+            ).GetHtml()
+
+
+
+@Html.Action("JoinPivotGridPartial")

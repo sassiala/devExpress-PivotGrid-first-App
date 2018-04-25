@@ -213,7 +213,9 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\_ViewStart.cshtml" />
@@ -231,6 +233,14 @@
     <Content Include="Views\ColisArticles\_PivotGrid3Partial.cshtml" />
     <Content Include="Views\CompteFeuille\Index.cshtml" />
     <Content Include="Views\CompteFeuille\_PivotGrid4Partial.cshtml" />
+    <Content Include="Views\ArboJournal\Index.cshtml" />
+    <Content Include="Views\ArboJournal\_ArboJournalPivotGridPartial.cshtml" />
+    <Content Include="Views\ArboCompteRacine\Index.cshtml" />
+    <Content Include="Views\ArboCompteRacine\_PivotGrid1Partial.cshtml" />
+    <Content Include="Views\TJAJoinCompteRacine\Index.cshtml" />
+    <Content Include="Views\TJAJoinCompteRacine\_JoinPivotGridPartial.cshtml" />
+    <Content Include="Views\JoinArboCR_CompteFeuille\Index.cshtml" />
+    <Content Include="Views\JoinArboCR_CompteFeuille\_JoinArboCR_CompteFeuillePivotGridPartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -262,6 +272,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\ArboCompteRacineController.cs" />
+    <Compile Include="Controllers\ArboJournalController.cs" />
     <Compile Include="Controllers\bonLivraisonController.cs" />
     <Compile Include="Controllers\ColiController.cs" />
     <Compile Include="Controllers\ColisArticlesController.cs" />
@@ -269,10 +281,15 @@
     <Compile Include="Controllers\CompteRacineController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RDCController.cs" />
+    <Compile Include="Controllers\TJAJoinCompteRacineController.cs" />
     <Compile Include="Controllers\TypeJournauxAssocieController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ArboCompteRacine.cs" />
+    <Compile Include="Models\ArboCompteRacineX.cs" />
+    <Compile Include="Models\ArboJournal.cs" />
+    <Compile Include="Models\ArboJournalX.cs" />
     <Compile Include="Models\BonLivraison.cs" />
     <Compile Include="Models\bonLivraisonERP.cs" />
     <Compile Include="Models\Coli.cs" />
@@ -283,6 +300,10 @@
     <Compile Include="Models\CompteFeuilleX.cs" />
     <Compile Include="Models\CompteRacine.cs" />
     <Compile Include="Models\CompteRacineX.cs" />
+    <Compile Include="Models\JoinArboCR_CompteFeuille.cs" />
+    <Compile Include="Models\JoinArboCR_CompteFeuilleX.cs" />
+    <Compile Include="Models\joinTJA_CompteRacine.cs" />
+    <Compile Include="Models\joinTJA_CompteRacineX.cs" />
     <Compile Include="Models\RDC.cs" />
     <Compile Include="Models\RubriqueDocumentComptable.cs" />
     <Compile Include="Models\TJAContaxt.cs" />

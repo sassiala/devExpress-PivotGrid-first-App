@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>
+    @Html.ActionLink("Home Page", "Index", "Home")
+</h3>
+<h2> Plan Comptable </h2>
+
+
+
+<script type="text/javascript">
+    var visible = true;
+
+    function JoinArboCR_CompteFeuilleJsFunction() {
+
+        JoinArboCR_CompteFeuillePivotGrid.SetCustomizationFieldsVisibility(visible);
+        if (visible) {
+            visible = false;
+        }
+        else {
+            visible = true;
+        }
+
+    }
+</script>
+
+@Html.DevExpress().Button(
+                settings =>
+                {
+                    settings.Name = "JoinArboCR_CompteFeuilleJsFunction";
+
+                    settings.Text = "Show Customization Form";
+                    settings.Width = 120;
+                    settings.ClientSideEvents.Click = "JoinArboCR_CompteFeuilleJsFunction";
+                }
+            ).GetHtml()
+
+
+@Html.Action("JoinArboCR_CompteFeuillePivotGridPartial")

@@ -180,3 +180,12 @@ C:\Users\ala\Desktop\VS\ErpTest\DevExpTempTest\obj\Debug\DevExpTempTest.csprojRe
 C:\Users\ala\Desktop\VS\ErpTest\DevExpTempTest\obj\Debug\DevExpTempTest.csproj.CoreCompileInputs.cache
 C:\Users\ala\Desktop\VS\ErpTest\DevExpTempTest\obj\Debug\DevExpTempTest.dll
 C:\Users\ala\Desktop\VS\ErpTest\DevExpTempTest\obj\Debug\DevExpTempTest.pdb
+C:\Users\ala\Desktop\VS\ErpTest\DevExpTempTest\bin\fr\System.Net.Http.Formatting.resources.dll
+C:\Users\ala\Desktop\VS\ErpTest\DevExpTempTest\bin\fr\System.Web.Helpers.resources.dll
+C:\Users\ala\Desktop\VS\ErpTest\DevExpTempTest\bin\fr\System.Web.Http.resources.dll
+C:\Users\ala\Desktop\VS\ErpTest\DevExpTempTest\bin\fr\System.Web.Http.WebHost.resources.dll
+C:\Users\ala\Desktop\VS\ErpTest\DevExpTempTest\bin\fr\System.Web.Mvc.resources.dll
+C:\Users\ala\Desktop\VS\ErpTest\DevExpTempTest\bin\fr\System.Web.Razor.resources.dll
+C:\Users\ala\Desktop\VS\ErpTest\DevExpTempTest\bin\fr\System.Web.WebPages.resources.dll
+C:\Users\ala\Desktop\VS\ErpTest\DevExpTempTest\bin\fr\System.Web.WebPages.Deployment.resources.dll
+C:\Users\ala\Desktop\VS\ErpTest\DevExpTempTest\bin\fr\System.Web.WebPages.Razor.resources.dll

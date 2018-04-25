@@ -2,6 +2,7 @@
     ViewBag.Title = "Home Page";
 }
 
+
 <h1>Home </h1>
 
 <ul>
@@ -38,6 +39,24 @@
     <li>
         <p>
             @Html.ActionLink("Rubrique Document Comptable GridPivot", "Index", "RDC")
+        </p>
+    </li>
+
+    <li>
+        <p>
+            @Html.ActionLink("Organisation des journaux de l'entreprise GridPivot", "Index", "ArboJournal")
+        </p>
+    </li>
+
+    <li>
+        <p>
+            @Html.ActionLink("Plan Comptable GridPivot", "Index", "ArboCompteRacine")
+        </p>
+    </li>
+
+    <li>
+        <p>
+            @Html.ActionLink("Join Journaux & Compte racine GridPivot", "Index", "TJAJoinCompteRacine")
         </p>
     </li>
 

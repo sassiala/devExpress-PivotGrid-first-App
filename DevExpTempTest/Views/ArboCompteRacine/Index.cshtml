@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Plan Comptable";
+}
+
+<h3>
+    @Html.ActionLink("Home Page", "Index", "Home")
+</h3>
+<h2>Table "Plan Comptable" </h2>
+
+<script type="text/javascript">
+    var visible = true;
+
+    function CompteRacineJsFunction() {
+
+        ArboCompteRacinePivotGrid.SetCustomizationFieldsVisibility(visible);
+        if (visible) {
+            visible = false;
+        }
+        else {
+            visible = true;
+        }
+
+    }
+</script>
+
+@Html.DevExpress().Button(
+                settings =>
+                {
+                    settings.Name = "showCompteRacine";
+
+                    settings.Text = "Show Customization Form";
+                    settings.Width = 120;
+                    settings.ClientSideEvents.Click = "CompteRacineJsFunction";
+                }
+            ).GetHtml()
+
+
+@Html.Action("PivotGrid1Partial")

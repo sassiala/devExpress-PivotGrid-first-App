@@ -60,6 +60,26 @@ namespace DevExpTempTest {
                 defaults: new { controller = "Coli", action = "Index", id = UrlParameter.Optional } // Parameter defaults
             );
 
+            routes.MapRoute(
+                name: "ArboJournalIndex", // Route name
+                url: "{controller}/{action}/{id}", // URL with parameters
+                defaults: new { controller = "ArboJournal", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+            );
+
+            routes.MapRoute(
+                name: "ArboCompteRacineIndex", // Route name
+                url: "{controller}/{action}/{id}", // URL with parameters
+                defaults: new { controller = "ArboCompteRacine", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+            );
+
+            routes.MapRoute(
+                name: "TJAJoinCompteRacineIndex", // Route name
+                url: "{controller}/{action}/{id}", // URL with parameters
+                defaults: new { controller = "TJAJoinCompteRacine", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+            );
+
+          
+
         }
     }
 }

@@ -103,6 +103,10 @@ namespace DevExpTempTest.Models
             modelBuilder.Entity<RubriqueDocumentComptable>()
                 .Property(e => e.SupplierAss)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<RubriqueDocumentComptable>()
+                .Property(e => e.CompteComptable)
+                .IsUnicode(false);
         }
     }
 }

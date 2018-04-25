@@ -27,5 +27,7 @@ namespace DevExpTempTest.Models
         public string Journal { get; set; }
 
         public string CategorieTiers { get; set; }
+
+        public string CompteComptable { get; set; }
     }
 }
